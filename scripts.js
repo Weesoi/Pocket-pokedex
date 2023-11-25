@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getPokemonInfo() {
 
-const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + writePokemon ;
+pokeContainer.innerHTML = "";
+
+var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + writePokemon ;
 
 // Luo uusi XMLHttpRequest-objekti
-const pyynto = new XMLHttpRequest();
+var pyynto = new XMLHttpRequest();
 
 // Määritä pyyntötyyppi ja kohde
 pyynto.open("GET", apiUrl, true);
@@ -42,18 +44,6 @@ pyynto.send();
 
 
 
-
-
-
-
-
-
-pokeContainer.innerHTML = "";
-
-
-
-var PokeRequest = new XMLHttpRequest();
-PokeRequest.open('GET', "https://pokeapi.co/api/v2/pokemon/", true);
 
 
 // tällä saadaan pokemon extry teksti
