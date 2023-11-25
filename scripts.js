@@ -9,7 +9,7 @@ function getPokemonInfo() {
 
 pokeContainer.innerHTML = "";
 
-var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + writePokemon ;
+var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 // Luo uusi XMLHttpRequest-objekti
 var pyynto = new XMLHttpRequest();
