@@ -1,4 +1,16 @@
 body {
     text-align: center;
     background-image: url('Images/grass-wallpaper.jpg');
+    font-family: 'GBA', sans-serif; /* Käytetään ladattua fonttia */
 }
+
+
+
+
+@font-face {
+    font-family: 'GBA';
+    src: url('Images/PokemonGb-RAeo.ttf') format('ttf');
+    font-weight: 400; /* Fontin paino, voit säätää tarpeen mukaan */
+    font-style: normal; /* Fontin tyyli, voit säätää tarpeen mukaan */
+  }
+
