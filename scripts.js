@@ -1,14 +1,11 @@
-
-
-
-let submitNappi = document.querySelector("#submit");
-
-
-submitNappi.addEventListener("click", function(){getPokemonInfo()});
-
+document.addEventListener("DOMContentLoaded", function () {
+    let submitNappi = document.querySelector("#submit");
+  
+    submitNappi.addEventListener("click", function () {
+      getPokemonInfo();
+    });
 
 function getPokemonInfo() {
-
 
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + writePokemon ;
 
@@ -38,13 +35,10 @@ pyynto.send();
 }
 
 
-function AddData () {
-
-
-    pokeContainer.innerHTML = data
-
-
-}
+  function AddData() {
+    pokeContainer.innerHTML = data;
+  }
+});
 
 
 
