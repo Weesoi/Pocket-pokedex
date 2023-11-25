@@ -1,33 +1,47 @@
-const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+
+
+
+let submitNappi = document.querySelector("#submit");
+
+
+submitButton.addEventListener("click", function(){getPokemonInfo()});
+
+
+function getPokemonInfo() {
+
+
+const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + writePokemon ;
 
 // Luo uusi XMLHttpRequest-objekti
-const xhr = new XMLHttpRequest();
+const pyynto = new XMLHttpRequest();
 
 // Määritä pyyntötyyppi ja kohde
-xhr.open("GET", apiUrl, true);
+pyynto.open("GET", apiUrl, true);
 
 // Määritä tapahtumakäsittelijä, kun pyyntö on valmis
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === XMLHttpRequest.DONE) {
-    if (xhr.status === 200) {
-      // Käsittele vastaus tässä
-      const data = JSON.parse(xhr.responseText);
+pyynto.onreadystatechange = function () {
+  if (pyynto.readyState === XMLHttpRequest.DONE) {
+    if (pyynto.status === 200) {
+      // Käsittellään vastaus tässä
+      const data = JSON.parse(pyynto.responseText);
       console.log(data);
     } else {
-      // Jos pyyntö epäonnistuu, tulosta virheilmoitus
-      console.error("There was an error with the XMLHttpRequest. Status:", xhr.status);
+      // Jos pyyntö epäonnistuu, tulostataan virheilmoitus
+      console.error("Pokemontietoja ei saatukaan haettua. :( Status:", pyynto.status);
     }
   }
 };
 
 // Lähetä pyyntö
-xhr.send();
+pyynto.send();
+
+}
 
 
 function AddData () {
 
 
-    pokeContainer.innerHTML
+    pokeContainer.innerHTML = data
 
 
 }
@@ -38,11 +52,10 @@ function AddData () {
 
 
 
-function getPokemonInfo() {
+
 
 pokeContainer.innerHTML = "";
 
-url = "https://pokeapi.co/api/v2/pokemon/ditto"
 
 
 var PokeRequest = new XMLHttpRequest();
@@ -55,7 +68,6 @@ PokeRequest.open('GET', "https://pokeapi.co/api/v2/pokemon/", true);
 //halutut tiedot: types, entry, name+ pokedex number , height, abilities, weight
 
 //tee suprise me- nappi jos kerkeät
-}
 
 
 
