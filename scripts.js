@@ -24,6 +24,15 @@ xhr.onreadystatechange = function () {
 xhr.send();
 
 
+function AddData () {
+
+
+    pokeContainer.innerHTML
+
+
+}
+
+
 
 
 
