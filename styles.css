@@ -18,7 +18,7 @@ padding: 20px;
 }
 
 
-/*Määritellään fontti erilliseen fontface-sääntöön*/
+/*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
     font-family: 'GBA';
     src: url('Images/PokemonGb-RAeo.ttf') format('truetype');

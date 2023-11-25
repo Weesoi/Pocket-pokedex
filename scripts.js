@@ -10,6 +10,8 @@ function getPokemonInfo() {
 pokeContainer.innerHTML = "";
 
 var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+var pokemonNimi = document.querySelector("#writePokemon").value; // Hae syötekentän arvo
+apiUrl = apiUrl + pokemonNimi.toLowerCase(); // Muutetaan nimi pieniksi kirjaimiksi
 
 // Luo uusi XMLHttpRequest-objekti
 var pyynto = new XMLHttpRequest();
