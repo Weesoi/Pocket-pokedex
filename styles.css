@@ -4,7 +4,10 @@ body {
     font-family: 'GBA', sans-serif; /* Käytetään ladattua fonttia */
 }
 
+h1 {
+padding: 20px;
 
+}
 
 /*Määritellään fontti erilliseen fontface-sääntöön*/
 @font-face {
