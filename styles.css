@@ -9,7 +9,7 @@ body {
 
 @font-face {
     font-family: 'GBA';
-    src: url('Images/PokemonGb-RAeo.ttf') format('ttf');
+    src: url('Images/PokemonGb-RAeo.ttf') format('truetype');
     font-weight: 400; /* Fontin paino, voit säätää tarpeen mukaan */
     font-style: normal; /* Fontin tyyli, voit säätää tarpeen mukaan */
   }
