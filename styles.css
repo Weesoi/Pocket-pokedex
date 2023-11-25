@@ -9,6 +9,16 @@ padding: 20px;
 
 }
 
+#infobox {
+    width: 400px;
+    height: 300px;
+    background-color: lightblue;
+
+
+
+}
+
+
 /*Määritellään fontti erilliseen fontface-sääntöön*/
 @font-face {
     font-family: 'GBA';

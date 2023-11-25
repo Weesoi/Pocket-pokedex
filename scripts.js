@@ -24,6 +24,7 @@ pyynto.onreadystatechange = function () {
       // Käsittellään vastaus tässä
       const data = JSON.parse(pyynto.responseText);
       console.log(data);
+      AddData(data);
     } else {
       // Jos pyyntö epäonnistuu, tulostataan virheilmoitus
       console.error("Pokemontietoja ei saatukaan haettua. :( Status:", pyynto.status);
@@ -36,12 +37,17 @@ pyynto.send();
 
 }
 
+function AddData(data) {
+    // Tässä vaiheessa voit muokata, miten haluat näyttää tiedot HTML-sivulla
+    // Esimerkiksi, jos haluat lisätä Pokemonin nimen div-elementtiin, voit tehdä näin:
+    const pokemonNimi = data.name;
+    const nimiElementti = document.createElement("div");
+    nimiElementti.textContent = "Pokemonin nimi: " + pokemonNimi;
 
-  function AddData() {
-    pokeContainer.innerHTML = data;
-  }
+    // Lisää luodut elementit pokeContainer-diviin
+    pokeContainer.appendChild(nimiElementti);
+}
 });
-
 
 
 
