@@ -4,7 +4,7 @@
 let submitNappi = document.querySelector("#submit");
 
 
-submitButton.addEventListener("click", function(){getPokemonInfo()});
+submitNappi.addEventListener("click", function(){getPokemonInfo()});
 
 
 function getPokemonInfo() {
