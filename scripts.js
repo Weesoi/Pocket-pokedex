@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 } 
                 }
             }
-        };
+        });
 
         // Lähetä pyyntö
         //pyynto.send();
