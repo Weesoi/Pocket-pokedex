@@ -44,11 +44,9 @@ function haeJaNaytaKuva(pokemonDexNumero) {
     kuvaElementti.src = imageUrl;
     kuvaElementti.alt = "Pokemon Image";
 
-    // Lisää kuva div-elementtiin
+    // Lisää kuva div-elementtiin vasta flavor tekstin jälkeen
     document.getElementById("pokemon-container").appendChild(kuvaElementti);
 }
-
-// Muut funktiot pysyvät samoina...
 
 
 function haeLisatiedot(pokemonData) {
@@ -105,6 +103,12 @@ function AddFlavourText(container, flavorText) {
     makuDiv.innerHTML = "<p>" + flavorText + "</p>";
     container.appendChild(makuDiv);
 }
+
+//Tässä alkuperäisen koodin raakileet. Koodia testatessa sain jatkuvasti ilmoituksen "network error" 
+// ja vaikka koitin kauan sen kanssa tapella, en onnistunut selvittämään mistä virhe johtui. APIsta itsessään se ei ollut kiinni koska päätin testata koodia 
+// muillakin API-kutsuilla, ja se ei toiminut. Console.logitkaan eivät oikein auttaneet asiaa.
+
+//------------------>
 
 
 /*document.addEventListener("DOMContentLoaded", function () {
