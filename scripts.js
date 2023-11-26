@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let submitNappi = document.querySelector("#submit");
+    let submitNappi = document.querySelector("#PainaNappia");
 
     submitNappi.addEventListener("click", function () {
         getCatFact();
