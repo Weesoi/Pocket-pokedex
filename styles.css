@@ -20,7 +20,7 @@ padding: 20px;
 
 
   img.pokemon-image {
-    width: 100%; /* Koko näyttöleveydestä */
+    width: 50%; /* Koko näyttöleveydestä */
     height: auto; /* Säilytä kuvasuhteet */
 }
 
