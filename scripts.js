@@ -19,7 +19,6 @@ function haePokemon() {
                 // Muunna JSON-muotoon
                 var data = JSON.parse(xhr.responseText);
                 haeLisatiedot(data);
-                haeJaNaytaKuva(data.id); // Hae ja näytä Pokemonin kuva
             } else {
                 console.error('Virhe haettaessa Pokemonin tietoja:', xhr.statusText);
                 alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
