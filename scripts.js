@@ -42,16 +42,17 @@ function haeJaNaytaKuva(pokemonDexNumero) {
     var kuvaElementti = document.createElement("img");
     kuvaElementti.src = imageUrl;
     kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
-    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä:
+    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
 
+    // Luo div-elementti tekstille
     var tekstiDiv = document.createElement("div");
-
-
-    document.getElementById("pokemon-container").appendChild(kuvaElementti);
     tekstiDiv.textContent = "Pokemonista ei ole valitettavasti vielä kuvaa";
-    tekstiDiv.style.color = "#DC143C"; // Aseta tekstin väri punaiseksi
+    tekstiDiv.style.color = "red"; // Aseta tekstin väri punaiseksi
 
+    document.getElementById("pokemon-container").appendChild(tekstiDiv);
 
+    
+    document.getElementById("pokemon-container").appendChild(kuvaElementti);
 }
 
 
