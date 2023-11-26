@@ -28,8 +28,8 @@ function haeLisatiedot(pokemonData) {
     var capitalizedPokemonName = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
     pokemonDiv.innerHTML = "<br><h2>" + capitalizedPokemonName + "</h2>" +
         "<p>Pokedex-number: " + pokemonData.id + "</p>" +
-        "<p>Height: " + pokemonData.height + "cm</p>" +
-        "<p>Weight: " + pokemonData.weight + "kg</p>" +
+        "<p>Height: " + muunnaKilogrammoiksi(pokemonData.height) + "cm</p>" +
+        "<p>Weight: " + muunnaKilogrammoiksi(pokemonData.weight) + "kg</p>" +
         "<p>Abilities: " + haeKyvyt(pokemonData.abilities) + "</p>";
 
     // Lisää div-elementti sivulle
@@ -46,6 +46,12 @@ function haeLisatiedot(pokemonData) {
         .catch(error => {
             console.error('Virhe haettaessa Pokemonin lajin tietoja:', error);
         });
+}
+
+
+function muunnaKilogrammoiksi(grammat) {
+    // Muunna grammaa kilogrammoiksi jakamalla 1000:lla
+    return (grammat / 1000).toFixed(2); // Kaksi desimaalia
 }
 
 function haeKyvyt(abilities) {
