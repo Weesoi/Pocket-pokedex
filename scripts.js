@@ -49,7 +49,7 @@ function haeJaNaytaKuva(pokemonDexNumero) {
 
     document.getElementById("pokemon-container").appendChild(kuvaElementti);
     tekstiDiv.textContent = "Pokemonista ei ole valitettavasti vielä kuvaa";
-    tekstiDiv.style.color = "red"; // Aseta tekstin väri punaiseksi
+    tekstiDiv.style.color = "#DC143C"; // Aseta tekstin väri punaiseksi
 
 
 }
