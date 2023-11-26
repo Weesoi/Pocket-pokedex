@@ -50,12 +50,12 @@ function haeLisatiedot(pokemonData) {
     // Lisää div-elementti sivulle
     pokemonContainer.appendChild(pokemonDiv);
 
-    // Hae flavor text eri API:sta
+    // Hae flavor-teksti samasta APista kuin aikasemmin mutta käyttäen 
     var speciesUrl = pokemonData.species.url;
     fetch(speciesUrl)
         .then(response => response.json())
         .then(speciesData => {
-            var flavorText = haeMaku(speciesData.flavor_text_entries);
+            var flavorText = getFlavour(speciesData.flavor_text_entries);
             AddFlavourText(pokemonContainer, flavorText);
         })
         .catch(error => {
@@ -70,12 +70,12 @@ function muunnaKilogrammoiksi(grammat) {
 }
 
 function haeKyvyt(abilities) {
-    // Yhdistä Pokemonin kyvyt pilkulla
+    // Yhdistä Pokemonin kyvyt
     return abilities.map(ability => ability.ability.name).join(", ");
 }
 
-function haeMaku(flavorTextEntries) {
-    // Hae ensimmäinen englanninkielinen maku
+function getFlavour(flavorTextEntries) {
+    // Hae ensimmäinen flavour-teksti mikä löytyy kosta kannassa on niitä useampi
     for (var i = 0; i < flavorTextEntries.length; i++) {
         if (flavorTextEntries[i].language.name === "en") {
             return flavorTextEntries[i].flavor_text;

@@ -4,6 +4,7 @@ Lähteet:
 
 
 https://github.com/favware/graphql-pokemon#using-fetch
+https://sentry.io/answers/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript/
 
 
 
