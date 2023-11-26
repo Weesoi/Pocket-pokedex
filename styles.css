@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    /*background-image: url('Images/grass-wallpaper.jpg');*/
+    background-image: url('Images/grass-wallpaper.jpg');
     font-family: 'GBA', sans-serif; /* Käytetään ladattua fonttia */
 }
 
@@ -12,9 +12,6 @@ padding: 20px;
 #infobox {
     width: 400px;
     height: 300px;
-
-
-
 }
 
 
