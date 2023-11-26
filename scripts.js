@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("pokeContainer content:", pokeContainer.innerHTML);
 } */
-});
 
 
 
