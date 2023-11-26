@@ -19,6 +19,7 @@ function haePokemon() {
                 // Muunna JSON-muotoon
                 var data = JSON.parse(xhr.responseText);
                 haeLisatiedot(data);
+                haeJaNaytaKuva(data.id); // Hae ja näytä Pokemonin kuva
             } else {
                 console.error('Virhe haettaessa Pokemonin tietoja:', xhr.statusText);
                 alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
@@ -34,6 +35,21 @@ function haePokemon() {
         xhr.send();
     }
 }
+
+function haeJaNaytaKuva(pokemonDexNumero) {
+    var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
+
+    // Luo kuva-elementti ja aseta sen lähde
+    var kuvaElementti = document.createElement("img");
+    kuvaElementti.src = imageUrl;
+    kuvaElementti.alt = "Pokemon Image";
+
+    // Lisää kuva div-elementtiin
+    document.getElementById("pokemon-container").appendChild(kuvaElementti);
+}
+
+// Muut funktiot pysyvät samoina...
+
 
 function haeLisatiedot(pokemonData) {
     var pokemonContainer = document.getElementById("pokemon-container");
