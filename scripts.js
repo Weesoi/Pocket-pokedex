@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getPokemonInfo() {
         const pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
-        const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi;
+        const apiUrl = "https://pokeapi.co/api/v2/pokemon/"; /*+ pokemonNimi; */
         
 
         // Luo uusi XMLHttpRequest-objekti
@@ -22,20 +22,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (pyynto.status === 200) {
                     // Käsittellään vastaus tässä
                     const data = JSON.parse(pyynto.responseText);
+                    console.log(data);
                     AddData(data);
                 } else {
                     // Jos pyyntö epäonnistuu, tulostataan virheilmoitus
                     console.error("Pokemontietoja ei saatukaan haettua. :( Status:", pyynto.status);
                 }
             }
-            // Lähetä pyyntö
-        pyynto.send();
         };
 
-        
+        // Lähetä pyyntö
+        //pyynto.send();
     }
 
-    
+  /*function AddData(data) {
+    var pokeContainer = document.getElementById("pokeContainer");
+    pokeContainer.innerHTML = ""; // Tyhjennä aiemmat tiedot
+    console.log(data);
+
+    // Tässä voit lisätä haluamiasi tietoja näytettäväksi
+    const pokemonNimi = data.name;
+    const nimiElementti = document.createElement("div");
+    nimiElementti.textContent = "Pokemonin nimi: " + pokemonNimi;
+
+    console.log("Adding data:", nimiElementti.textContent);
+
+    // Lisää luodut elementit pokeContainer-diviin
+    pokeContainer.appendChild(nimiElementti);
+
+    console.log("pokeContainer content:", pokeContainer.innerHTML);
+} */
 });
 
 
