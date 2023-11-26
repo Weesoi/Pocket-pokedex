@@ -41,14 +41,9 @@ function haeJaNaytaKuva(pokemonDexNumero) {
     // Luo kuva-elementti ja aseta sen lähde
     var kuvaElementti = document.createElement("img");
     kuvaElementti.src = imageUrl;
+    kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
     kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
 
-    // Luo div-elementti tekstille
-    var tekstiDiv = document.createElement("div");
-    tekstiDiv.textContent = "Pokemonista ei ole valitettavasti vielä kuvaa";
-    tekstiDiv.style.color = "red"; // Aseta tekstin väri punaiseksi
-
-    document.getElementById("pokemon-container").appendChild(tekstiDiv);
 
     
     document.getElementById("pokemon-container").appendChild(kuvaElementti);
