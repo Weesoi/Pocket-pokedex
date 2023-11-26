@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function getPokemonInfo() {
-        var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
-        var pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
+        const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+        const pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
 
         // Luo uusi XMLHttpRequest-objekti
         var pyynto = new XMLHttpRequest();
@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function AddData(data) {
         var pokeContainer = document.getElementById("pokeContainer");
         pokeContainer.innerHTML = ""; // Tyhjennä aiemmat tiedot
+        console.log(data);
 
         // Tässä voit lisätä haluamiasi tietoja näytettäväksi
         const pokemonNimi = data.name;
