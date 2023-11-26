@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getPokemonInfo() {
         var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
-        var pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase(); // Hae syötekentän arvo ja muuta se pieniksi kirjaimiksi
+        var pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
 
         // Luo uusi XMLHttpRequest-objekti
         var pyynto = new XMLHttpRequest();
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (pyynto.status === 200) {
                     // Käsittellään vastaus tässä
                     const data = JSON.parse(pyynto.responseText);
-                    console.log(data);
                     AddData(data);
                 } else {
                     // Jos pyyntö epäonnistuu, tulostataan virheilmoitus
@@ -35,11 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function AddData(data) {
-        var pokeContainer = document.getElementById("pokeContainer"); // Hae pokeContainer täällä
+        var pokeContainer = document.getElementById("pokeContainer");
         pokeContainer.innerHTML = ""; // Tyhjennä aiemmat tiedot
 
-        // Tässä vaiheessa voit muokata, miten haluat näyttää tiedot HTML-sivulla
-        // Esimerkiksi, jos haluat lisätä Pokemonin nimen div-elementtiin, voit tehdä näin:
+        // Tässä voit lisätä haluamiasi tietoja näytettäväksi
         const pokemonNimi = data.name;
         const nimiElementti = document.createElement("div");
         nimiElementti.textContent = "Pokemonin nimi: " + pokemonNimi;
