@@ -1,27 +1,72 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let submitNappi = document.querySelector("#PainaNappia");
+function haePokemon() {
+    // Tyhjennä aiemmat hakut
+    document.getElementById("pokemon-container").innerHTML = "";
 
-    submitNappi.addEventListener("click", function () {
-        getCatFact();
-    });
+    let pokemonNimi = document.querySelector("#submit");
 
-    function getCatFact() {
-        const apiUrl = "https://meowfacts.herokuapp.com/";
+    if (pokemonNimi) {
+        var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
 
+        // Fetch API:lla
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                console.log("Cat Fact:", data.data);
+                haeLisatiedot(data);
             })
             .catch(error => {
-                console.error("Error fetching cat fact:", error);
+                console.error('Virhe haettaessa Pokemonin tietoja:', error);
+                alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
             });
     }
-});
+}
 
+function haeLisatiedot(pokemonData) {
+    var pokemonContainer = document.getElementById("pokemon-container");
 
+    // Luo uusi div-elementti näyttämään Pokemonin tiedot
+    var pokemonDiv = document.createElement("div");
+    pokemonDiv.innerHTML = "<h2>" + pokemonData.name + "</h2>" +
+        "<p>Pokedex-numero: " + pokemonData.id + "</p>" +
+        "<p>Korkeus: " + pokemonData.height + "cm</p>" +
+        "<p>Paino: " + pokemonData.weight + "kg</p>" +
+        "<p>Kyvyt: " + haeKyvyt(pokemonData.abilities) + "</p>";
 
+    // Lisää div-elementti sivulle
+    pokemonContainer.appendChild(pokemonDiv);
 
+    // Hae maku (flavor text) eri API:sta
+    var speciesUrl = pokemonData.species.url;
+    fetch(speciesUrl)
+        .then(response => response.json())
+        .then(speciesData => {
+            var flavorText = haeMaku(speciesData.flavor_text_entries);
+            lisaaMaku(pokemonContainer, flavorText);
+        })
+        .catch(error => {
+            console.error('Virhe haettaessa Pokemonin lajin tietoja:', error);
+        });
+}
+
+function haeKyvyt(abilities) {
+    // Yhdistä Pokemonin kyvyt pilkulla
+    return abilities.map(ability => ability.ability.name).join(", ");
+}
+
+function haeMaku(flavorTextEntries) {
+    // Hae ensimmäinen englanninkielinen maku
+    for (var i = 0; i < flavorTextEntries.length; i++) {
+        if (flavorTextEntries[i].language.name === "en") {
+            return flavorTextEntries[i].flavor_text;
+        }
+    }
+    return "Ei saatavilla";
+}
+
+function lisaaMaku(container, flavorText) {
+    var makuDiv = document.createElement("div");
+    makuDiv.innerHTML = "<p>Maku: " + flavorText + "</p>";
+    container.appendChild(makuDiv);
+}
 
 
 
