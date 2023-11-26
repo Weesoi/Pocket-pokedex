@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getPokemonInfo() {
         const pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
-        const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi;
+        const apiUrl = "https://openexchangerates.org/api/latest.json?app_id=ff90657c974644dfb85422788c149ba9" + pokemonNimi;
 
         fetch(apiUrl)
             .then(response => response.json())
