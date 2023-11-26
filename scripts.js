@@ -7,16 +7,31 @@ function haePokemon() {
     if (pokemonNimi) {
         var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
 
-        // Fetch API:lla
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
+        // Luo uusi XMLHttpRequest-objekti
+        var xhr = new XMLHttpRequest();
+
+        // Määritä pyyntö
+        xhr.open("GET", apiUrl, true);
+
+        // Määritä tapahtumankäsittelijät
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                // Muunna JSON-muotoon
+                var data = JSON.parse(xhr.responseText);
                 haeLisatiedot(data);
-            })
-            .catch(error => {
-                console.error('Virhe haettaessa Pokemonin tietoja:', error);
+            } else {
+                console.error('Virhe haettaessa Pokemonin tietoja:', xhr.statusText);
                 alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
-            });
+            }
+        };
+
+        xhr.onerror = function() {
+            console.error('Virhe haettaessa Pokemonin tietoja:', xhr.statusText);
+            alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
+        };
+
+        // Lähetä pyyntö
+        xhr.send();
     }
 }
 
@@ -35,7 +50,7 @@ function haeLisatiedot(pokemonData) {
     // Lisää div-elementti sivulle
     pokemonContainer.appendChild(pokemonDiv);
 
-    // Hae maku (flavor text) eri API:sta
+    // Hae flavor text eri API:sta
     var speciesUrl = pokemonData.species.url;
     fetch(speciesUrl)
         .then(response => response.json())
