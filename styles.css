@@ -2,7 +2,7 @@ body {
     text-align: center;
     background-image: url('Images/grass-wallpaper.jpg');
     font-family: 'GBA', sans-serif; /* Käytetään ladattua fonttia */
-    text-size-adjust: 80%;
+    text-size-adjust: 10%;
 }
 
 h1 {
