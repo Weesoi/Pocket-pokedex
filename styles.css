@@ -9,9 +9,9 @@ padding: 20px;
 
 }
 
-#infobox {
-    width: 125%;
-    height: 125%;
+#PokeEntry {
+    width: 150%;
+    height: 150%;
 }
 
 /*Määritellään fontti erilliseen fontface-osioon*/
@@ -24,8 +24,8 @@ padding: 20px;
 
 
   img.pokemon-image {
-    width: 150px; /* Voit muuttaa tätä arvoa haluamaksesi kooksi */
-    height: 150px; /* Automaattinen korkeus suhteessa leveyteen */
+    width: 150%; /* Voit muuttaa tätä arvoa haluamaksesi kooksi */
+    height: 150%; /* Automaattinen korkeus suhteessa leveyteen */
 }
 
 
