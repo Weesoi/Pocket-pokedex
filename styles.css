@@ -23,11 +23,10 @@ padding: 20px;
   }
 
 
-  #kuvaElementti {
-
-size: 500px;
-
-  }
+  img.pokemon-image {
+    width: 150px; /* Voit muuttaa tätä arvoa haluamaksesi kooksi */
+    height: 150px; /* Automaattinen korkeus suhteessa leveyteen */
+}
 
 
   /*submit {
