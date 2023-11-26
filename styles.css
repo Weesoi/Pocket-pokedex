@@ -14,6 +14,15 @@ padding: 20px;
     height: 300px;
 }
 
+
+#nappi {
+
+padding: 20px;
+
+
+
+
+}
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
     font-family: 'GBA';
