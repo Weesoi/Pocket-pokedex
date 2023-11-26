@@ -2,7 +2,7 @@ function haePokemon() {
     // Tyhjennä aiemmat hakut
     document.getElementById("pokemon-container").innerHTML = "";
 
-    let pokemonNimi = document.querySelector("#submit");
+    var pokemonNimi = document.getElementById("pokemon-input").value;
 
     if (pokemonNimi) {
         var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
@@ -27,8 +27,8 @@ function haeLisatiedot(pokemonData) {
     var pokemonDiv = document.createElement("div");
     pokemonDiv.innerHTML = "<h2>" + pokemonData.name + "</h2>" +
         "<p>Pokedex-numero: " + pokemonData.id + "</p>" +
-        "<p>Korkeus: " + pokemonData.height + "cm</p>" +
-        "<p>Paino: " + pokemonData.weight + "kg</p>" +
+        "<p>Korkeus: " + pokemonData.height + "</p>" +
+        "<p>Paino: " + pokemonData.weight + "</p>" +
         "<p>Kyvyt: " + haeKyvyt(pokemonData.abilities) + "</p>";
 
     // Lisää div-elementti sivulle
@@ -67,7 +67,6 @@ function lisaaMaku(container, flavorText) {
     makuDiv.innerHTML = "<p>Maku: " + flavorText + "</p>";
     container.appendChild(makuDiv);
 }
-
 
 
 /*document.addEventListener("DOMContentLoaded", function () {
