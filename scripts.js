@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var pyynto = new XMLHttpRequest();
 
         // Määritä pyyntötyyppi ja kohde
-        pyynto.open("GET", apiUrl + pokemonNimi, true);
+        pyynto.open("GET", apiUrl, true);
 
         // Määritä tapahtumakäsittelijä, kun pyyntö on valmis
         pyynto.onreadystatechange = function () {
