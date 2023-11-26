@@ -51,7 +51,7 @@ function haeLisatiedot(pokemonData) {
 
 function muunnaKilogrammoiksi(grammat) {
     // Muunna grammaa kilogrammoiksi jakamalla 1000:lla
-    return (grammat / 1000).toFixed(2); // Kaksi desimaalia
+    return (grammat / 100).toFixed(2); // Kaksi desimaalia
 }
 
 function haeKyvyt(abilities) {
