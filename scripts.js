@@ -27,10 +27,10 @@ function haeLisatiedot(pokemonData) {
     var pokemonDiv = document.createElement("div");
     var capitalizedPokemonName = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
     pokemonDiv.innerHTML = "<br><h2>" + capitalizedPokemonName + "</h2>" +
-        "<p>Pokedex-numero: " + pokemonData.id + "</p>" +
-        "<p>Korkeus: " + pokemonData.height + "cm</p>" +
-        "<p>Paino: " + pokemonData.weight + "kg</p>" +
-        "<p>Kyvyt: " + haeKyvyt(pokemonData.abilities) + "</p>";
+        "<p>Pokedex-number: " + pokemonData.id + "</p>" +
+        "<p>Height: " + pokemonData.height + "cm</p>" +
+        "<p>Weight: " + pokemonData.weight + "kg</p>" +
+        "<p>Abilities: " + haeKyvyt(pokemonData.abilities) + "</p>";
 
     // Lisää div-elementti sivulle
     pokemonContainer.appendChild(pokemonDiv);
@@ -41,7 +41,7 @@ function haeLisatiedot(pokemonData) {
         .then(response => response.json())
         .then(speciesData => {
             var flavorText = haeMaku(speciesData.flavor_text_entries);
-            lisaaMaku(pokemonContainer, flavorText);
+            AddFlavourText(pokemonContainer, flavorText);
         })
         .catch(error => {
             console.error('Virhe haettaessa Pokemonin lajin tietoja:', error);
@@ -63,9 +63,9 @@ function haeMaku(flavorTextEntries) {
     return "Ei saatavilla";
 }
 
-function lisaaMaku(container, flavorText) {
+function AddFlavourText(container, flavorText) {
     var makuDiv = document.createElement("div");
-    makuDiv.innerHTML = "<p>Maku: " + flavorText + "</p>";
+    makuDiv.innerHTML = "<p>" + flavorText + "</p>";
     container.appendChild(makuDiv);
 }
 
