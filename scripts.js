@@ -14,26 +14,22 @@ document.addEventListener("DOMContentLoaded", function () {
         var pyynto = new XMLHttpRequest();
 
         // Määritä pyyntötyyppi ja kohde
-        pyynto.open("GET", apiUrl, true);
+        pyynto.open('GET', apiUrl, true);
 
         // Määritä tapahtumakäsittelijä, kun pyyntö on valmis
-        pyynto.onreadystatechange = function () {
-            if (pyynto.readyState === XMLHttpRequest.DONE) {
-                if (pyynto.status === 200) {
+        pyynto.onload = function () {
+            {
                     // Käsittellään vastaus tässä
                     const data = JSON.parse(pyynto.responseText);
                     console.log(data);
                     AddData(data);
-                } else {
-                    // Jos pyyntö epäonnistuu, tulostataan virheilmoitus
-                    console.error("Pokemontietoja ei saatukaan haettua. :( Status:", pyynto.status);
+                } 
                 }
             }
         };
 
         // Lähetä pyyntö
         //pyynto.send();
-    }
 
   /*function AddData(data) {
     var pokeContainer = document.getElementById("pokeContainer");
