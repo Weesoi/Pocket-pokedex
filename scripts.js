@@ -7,29 +7,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getPokemonInfo() {
         const pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
+        const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                AddData(data);
+            })
+            .catch(error => {
+                console.error("Error fetching Pokemon data:", error);
+            });
+    }
+
+    function AddData(data) {
+        var pokeContainer = document.getElementById("pokeContainer");
+        pokeContainer.innerHTML = ""; // Tyhjennä aiemmat tiedot
+        console.log(data);
+
+        // Tässä voit lisätä haluamiasi tietoja näytettäväksi
+        const pokemonNimi = data.name;
+        const nimiElementti = document.createElement("div");
+        nimiElementti.textContent = "Pokemonin nimi: " + pokemonNimi;
+
+        console.log("Adding data:", nimiElementti.textContent);
+
+        // Lisää luodut elementit pokeContainer-diviin
+        pokeContainer.appendChild(nimiElementti);
+
+        console.log("pokeContainer content:", pokeContainer.innerHTML);
+    }
+});
+
+
+
+
+
+
+
+
+/*document.addEventListener("DOMContentLoaded", function () {
+    let submitNappi = document.querySelector("#submit");
+
+    submitNappi.addEventListener("click", function () {
+        getPokemonInfo();
+    });
+
+    function getPokemonInfo() {
+        const pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
         const apiUrl = "https://pokeapi.co/api/v2/pokemon/"; /*+ pokemonNimi; */
         
 
         // Luo uusi XMLHttpRequest-objekti
-        var pyynto = new XMLHttpRequest();
+        /*var pyynto = new XMLHttpRequest();
 
         // Määritä pyyntötyyppi ja kohde
-        pyynto.open('GET', apiUrl, true);
+        pyynto.open("GET", apiUrl, true);
 
         // Määritä tapahtumakäsittelijä, kun pyyntö on valmis
-        pyynto.onload = function () {
-            {
+        pyynto.onreadystatechange = function () {
+            if (pyynto.readyState === XMLHttpRequest.DONE) {
+                if (pyynto.status === 200) {
                     // Käsittellään vastaus tässä
                     const data = JSON.parse(pyynto.responseText);
-                    console.log(data);
                     AddData(data);
-                } 
+                } else {
+                    // Jos pyyntö epäonnistuu, tulostataan virheilmoitus
+                    console.error("Pokemontietoja ei saatukaan haettua. :( Status:", pyynto.status);
                 }
             }
-        });
+        };
 
         // Lähetä pyyntö
         //pyynto.send();
+    //}
 
   /*function AddData(data) {
     var pokeContainer = document.getElementById("pokeContainer");
@@ -48,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("pokeContainer content:", pokeContainer.innerHTML);
 } */
+//});
 
 
 
