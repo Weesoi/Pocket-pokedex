@@ -9,10 +9,7 @@ padding: 20px;
 
 }
 
-#PokeEntry {
-    width: 150%;
-    height: 150%;
-}
+
 
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
@@ -35,6 +32,9 @@ padding: 20px;
     background-size: cover;
     
     background-repeat: no-repeat;
-    
+    #PokeEntry {
+    width: 150%;
+    height: 150%;
+}
     }
 */
