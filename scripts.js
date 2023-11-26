@@ -71,6 +71,9 @@ function haeLisatiedot(pokemonData) {
         .then(speciesData => {
             var flavorText = getFlavour(speciesData.flavor_text_entries);
             AddFlavourText(pokemonContainer, flavorText);
+
+            // Hae ja näytä Pokemonin kuva
+            haeJaNaytaKuva(pokemonData.id);
         })
         .catch(error => {
             console.error('Virhe haettaessa Pokemonin lajin tietoja:', error);
