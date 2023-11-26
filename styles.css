@@ -20,18 +20,6 @@ padding: 20px;
 
 
   img.pokemon-image {
-    width: 50%; /* Koko näyttöleveydestä */
-    height: auto; /* Säilytä kuvasuhteet */
-}
-
-@media (min-width: 768px) {
-    img.pokemon-image {
-        width: 50%; /* Kun näyttö on vähintään 768 pikseliä leveä */
-    }
-}
-
-@media (min-width: 1024px) {
-    img.pokemon-image {
-        width: 30%; /* Kun näyttö on vähintään 1024 pikseliä leveä */
-    }
+    width: 10%;
+    height: auto; 
 }
