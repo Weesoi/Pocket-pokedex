@@ -3,6 +3,10 @@
 
 
 
+https://pocket-pokedex.netlify.app/
+
+
+
 TODO:
 
 - tee vinkki lappu jonka voi sulkea

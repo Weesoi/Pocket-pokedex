@@ -22,6 +22,8 @@ Node: appendChild() method. Mdn web docs.  Käytetty
 https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
 
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+
 Media:
 
 Pokemon-spritet:
