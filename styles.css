@@ -21,8 +21,8 @@ padding: 20px;
 
 
   img.pokemon-image {
-    width: 110%; /* Voit muuttaa tätä arvoa haluamaksesi kooksi */
-    height: 110%; /* Automaattinen korkeus suhteessa leveyteen */
+    width: 50%; /* Voit muuttaa tätä arvoa haluamaksesi kooksi */
+    height: 50%; /* Automaattinen korkeus suhteessa leveyteen */
 }
 
 
