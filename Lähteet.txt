@@ -1,52 +1,34 @@
 Lähteet:
 
+PokeAPI, The RESTful Pokémon API. 
+https://pokeapi.co/
+
+Bootstrap 5.
+https://getbootstrap.com/docs/4.0/components/buttons/
+
+ChatGPT:tä on käytetty koodin siistimiseen ja ongelmien etsimiseen koodista. 
+OpenAI 2023. ChatGPT versio GPT-3.5. Käytetty 26.11.2023 
+https://chat.openai.com/
 
 
+Using the Fetch API. Mdn web docs. 
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
-https://github.com/favware/graphql-pokemon#using-fetch
+
+How do I Make the First Letter of a String Uppercase in JavaScript? Sentry.
 https://sentry.io/answers/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript/
 
-
-
-
-
-
-
-
-
+Node: appendChild() method. Mdn web docs.  Käytetty 
+https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
 
 Media:
+
+Pokemon-spritet:
+https://github.com/PokeAPI/sprites
 
 GBA-fontti:
 https://www.fontspace.com/pokemon-gb-font-f9621
 
 Taustakuva:
 https://images4.alphacoders.com/574/574726.jpg
-
-
-<!DOCTYPE html>
-<html lang="fi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocket Pokedex</title>
-    <!-- käyttäkäämme hieman bootstrappiä --> 
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">--> 
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
-    <link rel="icon" type="image/x-icon" href="Images/pokefavi.ico">
-</head>
-<body>
-
-    <header>
-        <h1 id="siteheader"> POCKET POKEDEX</h1>
-        <p>Type name to find pokemon</p>
-        <form id="choosepokemon">
-            <input id="writePokemon">
-            <button onclick=haePokemon() id="PainaNappia">FIND</button>
-        </form>
-    </header>
-
-    
-        <div id="pokeContainer"></div>

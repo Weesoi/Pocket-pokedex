@@ -9,8 +9,6 @@ padding: 20px;
 
 }
 
-
-
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
     font-family: 'GBA';
@@ -24,17 +22,3 @@ padding: 20px;
     width: 10%;
     height: auto; 
 }
-
-
-  /*submit {
-    background-image: url("Images/pokeballsprite.png");
-    
-    background-size: cover;
-    
-    background-repeat: no-repeat;
-    #PokeEntry {
-    width: 150%;
-    height: 150%;
-}
-    }
-*/

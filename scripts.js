@@ -1,37 +1,38 @@
+//submit-napin painaminen tuo meidät tänne
 function haePokemon() {
-    // Tyhjennä aiemmat hakut
+    // Tyhjennä aiemmat haut 
     document.getElementById("pokemon-container").innerHTML = "";
-
+    //haetaan 
     var pokemonNimi = document.getElementById("pokemon-input").value;
 
     if (pokemonNimi) {
         var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
 
-        // Luo uusi XMLHttpRequest-objekti
-        var xhr = new XMLHttpRequest();
+        // Luodaan uusi objekti
+        var kutsu = new XMLHttpRequest();
 
         // Määritä pyyntö
-        xhr.open("GET", apiUrl, true);
+        kutsu.open("GET", apiUrl, true);
 
         // Määritä tapahtumankäsittelijät
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                // Muunna JSON-muotoon
-                var data = JSON.parse(xhr.responseText);
+        kutsu.onload = function() {
+            if (kutsu.status >= 200 && kutsu.status < 300) {
+                // Muunna JSON:ksi
+                var data = JSON.parse(kutsu.responseText);
                 haeLisatiedot(data);
             } else {
-                console.error('Virhe haettaessa Pokemonin tietoja:', xhr.statusText);
+                console.error('Virhe haettaessa Pokemonin tietoja:', kutsu.statusText);
                 alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
             }
         };
 
-        xhr.onerror = function() {
-            console.error('Virhe haettaessa Pokemonin tietoja:', xhr.statusText);
+        kutsu.onerror = function() {
+            console.error('Virhe haettaessa Pokemonin tietoja:', kutsu.statusText);
             alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
         };
 
         // Lähetä pyyntö
-        xhr.send();
+        kutsu.send();
     }
 }
 
@@ -65,7 +66,7 @@ function haeLisatiedot(pokemonData) {
     // Lisää div-elementti sivulle
     pokemonContainer.appendChild(pokemonDiv);
 
-    // Hae flavor-teksti samasta APista kuin aikasemmin mutta käyttäen 
+    // Hae flavor-teksti samasta APista kuin aikasemmin mutta käyttäen hieman eri osoitetta
     var speciesUrl = pokemonData.species.url;
     fetch(speciesUrl)
         .then(response => response.json())
@@ -77,14 +78,14 @@ function haeLisatiedot(pokemonData) {
             haeJaNaytaKuva(pokemonData.id);
         })
         .catch(error => {
-            console.error('Virhe haettaessa Pokemonin lajin tietoja:', error);
+            console.error('Virhe haettaessa Pokemonin tietoja:', error);
         });
 }
 
-
+// pokemonien paino ja pituus tulevat tietokannasta hehtogrammoina ja hehtometreinä joten tämä funktio muuttaa ne kg ja cm-muotoon. 
 function muunnaKilogrammoiksi(grammat) {
-    // Muunna grammaa kilogrammoiksi jakamalla 1000:lla
-    return (grammat / 10).toFixed(2); // Kaksi desimaalia
+    // Muunna grammaa kilogrammoiksi jakamalla 10:llä
+    return (grammat / 10).toFixed(2);
 }
 
 function haeKyvyt(abilities) {
@@ -93,7 +94,7 @@ function haeKyvyt(abilities) {
 }
 
 function getFlavour(flavorTextEntries) {
-    // Hae ensimmäinen flavour-teksti mikä löytyy kosta kannassa on niitä useampi
+    // Hae ensimmäinen flavour-teksti mikä löytyy koska kannassa on niitä useampi
     for (var i = 0; i < flavorTextEntries.length; i++) {
         if (flavorTextEntries[i].language.name === "en") {
             return flavorTextEntries[i].flavor_text;
@@ -103,9 +104,9 @@ function getFlavour(flavorTextEntries) {
 }
 
 function AddFlavourText(container, flavorText) {
-    var makuDiv = document.createElement("div");
-    makuDiv.innerHTML = "<p>" + flavorText + "</p>";
-    container.appendChild(makuDiv);
+    var FlavourDiv = document.createElement("div");
+    FlavourDiv.innerHTML = "<p>" + flavorText + "</p>";
+    container.appendChild(FlavourDiv);
 }
 
 //Tässä alkuperäisen koodin raakileet. Koodia testatessa sain jatkuvasti ilmoituksen "network error" 
@@ -127,13 +128,10 @@ function AddFlavourText(container, flavorText) {
         const apiUrl = "https://pokeapi.co/api/v2/pokemon/"; /*+ pokemonNimi; */
         
 
-        // Luo uusi XMLHttpRequest-objekti
         /*var pyynto = new XMLHttpRequest();
 
-        // Määritä pyyntötyyppi ja kohde
         pyynto.open("GET", apiUrl, true);
 
-        // Määritä tapahtumakäsittelijä, kun pyyntö on valmis
         pyynto.onreadystatechange = function () {
             if (pyynto.readyState === XMLHttpRequest.DONE) {
                 if (pyynto.status === 200) {
@@ -141,13 +139,11 @@ function AddFlavourText(container, flavorText) {
                     const data = JSON.parse(pyynto.responseText);
                     AddData(data);
                 } else {
-                    // Jos pyyntö epäonnistuu, tulostataan virheilmoitus
                     console.error("Pokemontietoja ei saatukaan haettua. :( Status:", pyynto.status);
                 }
             }
         };
 
-        // Lähetä pyyntö
         //pyynto.send();
     //}
 
@@ -156,7 +152,6 @@ function AddFlavourText(container, flavorText) {
     pokeContainer.innerHTML = ""; // Tyhjennä aiemmat tiedot
     console.log(data);
 
-    // Tässä voit lisätä haluamiasi tietoja näytettäväksi
     const pokemonNimi = data.name;
     const nimiElementti = document.createElement("div");
     nimiElementti.textContent = "Pokemonin nimi: " + pokemonNimi;
