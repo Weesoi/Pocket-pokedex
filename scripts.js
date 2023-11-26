@@ -28,8 +28,8 @@ function haeLisatiedot(pokemonData) {
     var capitalizedPokemonName = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
     pokemonDiv.innerHTML = "<h2>" + capitalizedPokemonName + "</h2>" +
         "<p>Pokedex-numero: " + pokemonData.id + "</p>" +
-        "<p>Korkeus: " + pokemonData.height + "</p>" +
-        "<p>Paino: " + pokemonData.weight + "</p>" +
+        "<p>Korkeus: " + pokemonData.height + "cm</p>" +
+        "<p>Paino: " + pokemonData.weight + "kg</p>" +
         "<p>Kyvyt: " + haeKyvyt(pokemonData.abilities) + "</p>";
 
     // Lisää div-elementti sivulle
