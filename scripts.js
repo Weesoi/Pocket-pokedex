@@ -35,23 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
     }
 
-    function AddData(data) {
-        var pokeContainer = document.getElementById("pokeContainer");
-        pokeContainer.innerHTML = ""; // Tyhjennä aiemmat tiedot
-        console.log(data);
     
-        // Tässä voit lisätä haluamiasi tietoja näytettäväksi
-        const pokemonNimi = data.name;
-        const nimiElementti = document.createElement("div");
-        nimiElementti.textContent = "Pokemonin nimi: " + pokemonNimi;
-    
-        console.log("Adding data:", nimiElementti.textContent);
-    
-        // Lisää luodut elementit pokeContainer-diviin
-        pokeContainer.appendChild(nimiElementti);
-    
-        console.log("pokeContainer content:", pokeContainer.innerHTML);
-    }
 });
 
 
