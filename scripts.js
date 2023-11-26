@@ -42,7 +42,7 @@ function haeJaNaytaKuva(pokemonDexNumero) {
     var kuvaElementti = document.createElement("img");
     kuvaElementti.src = imageUrl;
     kuvaElementti.alt = "Pokemon Image";
-    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, joka on määritelty CSS:ssä
+    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä:
 
     // Lisää kuva div-elementtiin vasta flavor tekstin jälkeen
     document.getElementById("pokemon-container").appendChild(kuvaElementti);
