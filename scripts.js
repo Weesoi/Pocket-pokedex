@@ -2,44 +2,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let submitNappi = document.querySelector("#submit");
 
     submitNappi.addEventListener("click", function () {
-        getPokemonInfo();
+        getCatFact();
     });
 
-    function getPokemonInfo() {
-        const pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
-        const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi;
+    function getCatFact() {
+        const apiUrl = "https://meowfacts.herokuapp.com/";
 
         fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                AddData(data);
+                console.log("Cat Fact:", data.data);
             })
             .catch(error => {
-                console.error("Error fetching Pokemon data:", error);
+                console.error("Error fetching cat fact:", error);
             });
-    }
-
-    function AddData(data) {
-        var pokeContainer = document.getElementById("pokeContainer");
-        pokeContainer.innerHTML = ""; // Tyhjennä aiemmat tiedot
-        console.log(data);
-
-        // Tässä voit lisätä haluamiasi tietoja näytettäväksi
-        const pokemonNimi = data.name;
-        const nimiElementti = document.createElement("div");
-        nimiElementti.textContent = "Pokemonin nimi: " + pokemonNimi;
-
-        console.log("Adding data:", nimiElementti.textContent);
-
-        // Lisää luodut elementit pokeContainer-diviin
-        pokeContainer.appendChild(nimiElementti);
-
-        console.log("pokeContainer content:", pokeContainer.innerHTML);
     }
 });
 
