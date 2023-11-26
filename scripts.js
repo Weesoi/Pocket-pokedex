@@ -28,10 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.error("Pokemontietoja ei saatukaan haettua. :( Status:", pyynto.status);
                 }
             }
+            // Lähetä pyyntö
+        pyynto.send();
         };
 
-        // Lähetä pyyntö
-        pyynto.send();
+        
     }
 
     function AddData(data) {
