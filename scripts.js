@@ -7,10 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getPokemonInfo() {
         const pokemonNimi = document.querySelector("#writePokemon").value.toLowerCase();
-        const apiUrl = "https://openexchangerates.org/api/latest.json?app_id=ff90657c974644dfb85422788c149ba9" + pokemonNimi;
+        const apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi;
 
         fetch(apiUrl)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 AddData(data);
             })
@@ -37,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("pokeContainer content:", pokeContainer.innerHTML);
     }
 });
-
 
 
 
