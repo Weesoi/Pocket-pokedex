@@ -36,6 +36,11 @@ padding: 20px;
         position: relative;
         top: 30px; /* Voit säätää tätä arvoa sen mukaan, kuinka paljon haluat siirtää lappua ylöspäin */
     }
+    .nappi {
+        margin-top: 10px;
+
+
+    }
 }
 
 /*Määritellään fontti erilliseen fontface-osioon*/
