@@ -58,9 +58,9 @@ function haeJaNaytaKuva(pokemonDexNumero, pokemonNimi) {
     var imageUrl;
 
     if (pokemonDexNumero > 650) {
-        imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
-    } else {
         imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
+    } else {
+        imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
     }
 
     // Luo kuva-elementti ja aseta sen lähde
