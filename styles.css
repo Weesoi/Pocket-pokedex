@@ -54,6 +54,14 @@ footer {
     bottom: 0;
     opacity: 0.7;
   }
+
+
+  .credits {
+
+    font-size: smaller;
+
+
+  }
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
     font-family: 'GBA';
