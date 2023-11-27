@@ -54,22 +54,23 @@ function haePokemon() {
     }
 }
 
-function haeJaNaytaKuva(pokemonNimi) {
-    var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
-    
+function haeJaNaytaKuva(pokemonDexNumero, pokemonNimi) {
+    var imageUrl;
 
-    //vaihtoehtoinen kuvapankki --> mietin vielä kumpaa käytän
-    //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
-
-    
-        // Luo kuva-elementti ja aseta sen lähde
-        var kuvaElementti = document.createElement("img");
-        kuvaElementti.src = imageUrl;
-        kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
-        kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
-    
-        document.getElementById("pokemon-container").appendChild(kuvaElementti);
+    if (pokemonDexNumero > 650) {
+        imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
+    } else {
+        imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
     }
+
+    // Luo kuva-elementti ja aseta sen lähde
+    var kuvaElementti = document.createElement("img");
+    kuvaElementti.src = imageUrl;
+    kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
+    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
+
+    document.getElementById("pokemon-container").appendChild(kuvaElementti);
+}
 
 
 function haeLisatiedot(pokemonData) {
