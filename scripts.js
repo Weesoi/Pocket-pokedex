@@ -21,7 +21,7 @@ function haePokemon() {
     // Tyhjennä aiemmat haut 
     document.getElementById("pokemon-container").innerHTML = "";
     //haetaan 
-    const pokemonNimi = document.getElementById("pokemon-input").value;
+    var pokemonNimi = document.getElementById("pokemon-input").value;
 
     if (pokemonNimi) {
         var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
@@ -54,28 +54,22 @@ function haePokemon() {
     }
 }
 
-function haeJaNaytaKuva(pokemonDexNumero, pokemonNimi) {
-    var imageUrl;
+function haeJaNaytaKuva(pokemonNimi) {
+    var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
+    
 
-    if (pokemonDexNumero > 650) {
-        imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
-    } else {
-        imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
-    }
+    //vaihtoehtoinen kuvapankki --> mietin vielä kumpaa käytän
+    //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
 
-    // Muuttujan pokemonNimi pienennys voi aiheuttaa virheen, jos pokemonNimi on undefined
-    // Tarkistetaan, että pokemonNimi on määritelty ennen kuin kutsutaan toLowerCase()
-    if (pokemonNimi) {
+    
         // Luo kuva-elementti ja aseta sen lähde
         var kuvaElementti = document.createElement("img");
         kuvaElementti.src = imageUrl;
         kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
         kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
-
+    
         document.getElementById("pokemon-container").appendChild(kuvaElementti);
     }
-}
-
 
 
 function haeLisatiedot(pokemonData) {
