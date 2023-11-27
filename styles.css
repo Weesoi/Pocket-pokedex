@@ -52,6 +52,7 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    opacity: 0.5;
   }
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
