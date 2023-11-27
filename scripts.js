@@ -53,55 +53,52 @@ function haePokemon() {
         kutsu.send();
     }
 }
-
-function haeJaNaytaKuva(pokemonNimi) {
+function haeJaNaytaKuva(pokemonNimi, container) {
     var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
-    
 
-    //vaihtoehtoinen kuvapankki --> mietin vielä kumpaa käytän
-    //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
+    // Luo kuva-elementti ja aseta sen lähde
+    var kuvaElementti = document.createElement("img");
+    kuvaElementti.src = imageUrl;
+    kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
+    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
 
-    
-        // Luo kuva-elementti ja aseta sen lähde
-        var kuvaElementti = document.createElement("img");
-        kuvaElementti.src = imageUrl;
-        kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
-        kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
-    
-        document.getElementById("pokemon-container").appendChild(kuvaElementti);
-    }
-
-
-function haeLisatiedot(pokemonData) {
-    var pokemonContainer = document.getElementById("pokemon-container");
-
-    // Luo uusi div-elementti näyttämään Pokemonin tiedot
-    var pokemonDiv = document.createElement("div");
-    var capitalizedPokemonName = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
-    pokemonDiv.innerHTML = "<br><h2>" + capitalizedPokemonName + "</h2>" +
-        "<p><b>Pokedex-number:</b> " + pokemonData.id + "</p>" +
-        "<p><b>Height:</b> " + muunnaKilogrammoiksi(pokemonData.height) + " m</p>" +
-        "<p><b>Weight:</b> " + muunnaKilogrammoiksi(pokemonData.weight) + " kg</p>" +
-        "<p><b>Abilities:</b> " + haeKyvyt(pokemonData.abilities) + "</p>";
-
-    // Lisää div-elementti sivulle
-    pokemonContainer.appendChild(pokemonDiv);
-
-    // Hae flavor-teksti samasta APista kuin aikasemmin mutta käyttäen hieman eri osoitetta
-    var speciesUrl = pokemonData.species.url;
-    fetch(speciesUrl)
-        .then(response => response.json())
-        .then(speciesData => {
-            var flavorText = getFlavour(speciesData.flavor_text_entries);
-            AddFlavourText(pokemonContainer, flavorText);
-
-            // Hae ja näytä Pokemonin kuva
-            haeJaNaytaKuva(pokemonData.name);
-        })
-        .catch(error => {
-            console.error('Virhe haettaessa Pokemonin tietoja:', error);
-        });
+    container.innerHTML = ''; // Tyhjennä container varmuuden vuoksi
+    container.appendChild(kuvaElementti);
 }
+
+    function haeLisatiedot(pokemonData) {
+        var pokemonContainer = document.getElementById("PokeEntry");
+    
+        // Lisää Pokemonin nimi yläkulmaan
+        var pokeEntryName = document.getElementById("poke-entry-name");
+        pokeEntryName.innerText = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
+    
+        // Muut tiedot vasemmalle
+        var pokeEntryInfo = document.getElementById("poke-entry-info");
+        pokeEntryInfo.innerHTML = "<p><b>Pokedex-number:</b> " + pokemonData.id + "</p>" +
+            "<p><b>Height:</b> " + muunnaKilogrammoiksi(pokemonData.height) + " m</p>" +
+            "<p><b>Weight:</b> " + muunnaKilogrammoiksi(pokemonData.weight) + " kg</p>" +
+            "<p><b>Abilities:</b> " + haeKyvyt(pokemonData.abilities) + "</p>";
+    
+        // Pokemonin kuva oikealle
+        var pokeEntryImage = document.getElementById("poke-entry-image");
+        haeJaNaytaKuva(pokemonData.name, pokeEntryImage);
+    
+        // Hae flavor-teksti samasta APista kuin aikaisemmin mutta käyttäen hieman eri osoitetta
+        var speciesUrl = pokemonData.species.url;
+        fetch(speciesUrl)
+            .then(response => response.json())
+            .then(speciesData => {
+                var flavorText = getFlavour(speciesData.flavor_text_entries);
+    
+                // Flavourtext alhaalla
+                var pokeEntryFlavourtext = document.getElementById("poke-entry-flavourtext");
+                pokeEntryFlavourtext.innerHTML = "<p>" + flavorText + "</p>";
+            })
+            .catch(error => {
+                console.error('Virhe haettaessa Pokemonin tietoja:', error);
+            });
+    }
 
 // pokemonien paino ja pituus tulevat tietokannasta hehtogrammoina ja hehtometreinä joten tämä funktio muuttaa ne kg ja cm-muotoon. 
 function muunnaKilogrammoiksi(grammat) {
