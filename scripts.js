@@ -14,30 +14,6 @@ function suljeLappu() {
     sisalto.style.display = "none";
 }
 
-var pokemonNames = ["Bulbasaur", "Charmander", "Squirtle", "Pikachu", "Jigglypuff", "Meowth", "Psyduck", "Geodude", "Magnemite", "Grimer"];
-
-// Hae input-kenttä ja datalist
-var inputField = document.getElementById("pokemon-input");
-var dataList = document.getElementById("pokemon-list");
-
-// Lisää vaihtoehdot datalistiin
-pokemonNames.forEach(function(pokemonName) {
-    var option = document.createElement("option");
-    option.value = pokemonName;
-    dataList.appendChild(option);
-});
-
-// Kuuntele input-kentän muutoksia
-inputField.addEventListener("input", function() {
-    // Voit lisätä tässä koodin, joka suorittaa hakuja kannasta ja päivittää dataListiä dynaamisesti
-    // Tässä vaiheessa se lisää vain staattisen listan, joka on esimerkkinä
-});
-
-
-
-
-
-
 
 
 //submit-napin painaminen tuo meidät tänne
