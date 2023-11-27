@@ -63,14 +63,19 @@ function haeJaNaytaKuva(pokemonDexNumero, pokemonNimi) {
         imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
     }
 
-    // Luo kuva-elementti ja aseta sen lähde
-    var kuvaElementti = document.createElement("img");
-    kuvaElementti.src = imageUrl;
-    kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
-    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
+    // Muuttujan pokemonNimi pienennys voi aiheuttaa virheen, jos pokemonNimi on undefined
+    // Tarkistetaan, että pokemonNimi on määritelty ennen kuin kutsutaan toLowerCase()
+    if (pokemonNimi) {
+        // Luo kuva-elementti ja aseta sen lähde
+        var kuvaElementti = document.createElement("img");
+        kuvaElementti.src = imageUrl;
+        kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
+        kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
 
-    document.getElementById("pokemon-container").appendChild(kuvaElementti);
+        document.getElementById("pokemon-container").appendChild(kuvaElementti);
+    }
 }
+
 
 
 function haeLisatiedot(pokemonData) {
