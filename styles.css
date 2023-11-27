@@ -11,8 +11,6 @@ padding: 20px;
 
 }
 
-
-
 .lappu {
     position: fixed;
     width: 200px;
@@ -30,7 +28,6 @@ padding: 20px;
     cursor: pointer;
 }
 
-
 @media screen and (max-width: 600px) {
     .lappu {
         /* Lisää tyylejä pienemmille näytöille */
@@ -44,7 +41,6 @@ padding: 20px;
     }
 }
 
-
 footer {
     background-color: #333; /* Footerin taustaväri */
     color: #fff; /* Tekstin väri */
@@ -56,15 +52,10 @@ footer {
     opacity: 0.7;
   }
 
-
   .credits {
 
     font-size: x-small;
-
-
   }
-
-
 
   #pokemon-container {
 
@@ -77,13 +68,7 @@ footer {
     border-radius: 25px;
     box-shadow: 0 0 10px black ;
 
-
-
-
-
   }
-
-
 
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
