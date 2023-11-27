@@ -10,6 +10,27 @@ padding: 20px;
 
 }
 
+
+
+.lappu {
+    position: relative;
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.sisalto {
+    display: none;
+}
+
+.avaa-nappi,
+.sulje-nappi {
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
     font-family: 'GBA';

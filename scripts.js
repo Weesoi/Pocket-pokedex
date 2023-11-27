@@ -1,3 +1,31 @@
+function avaaLappu() {
+    var lappu = document.getElementById("avattavaLappu");
+    var sisalto = lappu.querySelector(".sisalto");
+
+    lappu.classList.add("avattu");
+    sisalto.style.display = "block";
+}
+
+function suljeLappu() {
+    var lappu = document.getElementById("avattavaLappu");
+    var sisalto = lappu.querySelector(".sisalto");
+
+    lappu.classList.remove("avattu");
+    sisalto.style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 //submit-napin painaminen tuo meidät tänne
 function haePokemon() {
     // Tyhjennä aiemmat haut 
@@ -39,6 +67,8 @@ function haePokemon() {
 function haeJaNaytaKuva(pokemonNimi) {
     var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
     
+
+    //vaihtoehtoinen kuvapankki --> mietin vielä kumpaa käytän
     //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
 
     
