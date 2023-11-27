@@ -16,6 +16,16 @@ function suljeLappu() {
 
 
 
+
+
+
+
+
+
+
+
+
+
 //submit-napin painaminen tuo meidät tänne
 function haePokemon() {
     // Tyhjennä aiemmat haut 

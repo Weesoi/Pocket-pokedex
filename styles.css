@@ -77,20 +77,6 @@ footer {
     height: auto; 
 }
 
-#PokeEntry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px; /* Säädä tarvittaessa etäisyyttä yläreunasta */
-}
-
-#pokemon-container {
-    border: 2px solid #ccc;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
 
 
 img.pokemon-image {
