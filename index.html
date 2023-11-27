@@ -24,7 +24,9 @@
             <h1 id="siteheader"> POCKET POKEDEX</h1>
             <p>Type name to find pokemon</p>
         </header>
-       
+        <label for="pokemon-input">Valitse Pokemon:</label>
+        <input type="text" id="pokemon-input" list="pokemon-list">
+        <datalist id="pokemon-list"></datalist>
         <input type="text" id="pokemon-input" placeholder="Anna Pokemonin nimi">
         <!-- Bootstrappiä käytetty vain tähän nappiin-->
 <button onclick="haePokemon()" class="btn btn-outline-dark" id="nappi"> FIND
