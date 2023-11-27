@@ -63,6 +63,19 @@ footer {
 
 
   }
+
+
+
+  #PokeEntry {
+    background-image:#F5F5DC;
+
+
+
+
+  }
+
+
+
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
     font-family: 'GBA';
