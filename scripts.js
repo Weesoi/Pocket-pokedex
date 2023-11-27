@@ -36,19 +36,20 @@ function haePokemon() {
     }
 }
 
-function haeJaNaytaKuva(pokemonDexNumero) {
-    var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
-
-    // Luo kuva-elementti ja aseta sen lähde
-    var kuvaElementti = document.createElement("img");
-    kuvaElementti.src = imageUrl;
-    kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
-    kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
-
+function haeJaNaytaKuva(pokemonNimi) {
+    var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
+    
+    //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
 
     
-    document.getElementById("pokemon-container").appendChild(kuvaElementti);
-}
+        // Luo kuva-elementti ja aseta sen lähde
+        var kuvaElementti = document.createElement("img");
+        kuvaElementti.src = imageUrl;
+        kuvaElementti.alt = "Pokemonista ei ole valitettavasti vielä kuvaa";
+        kuvaElementti.classList.add("pokemon-image"); // Lisää luokka, jotta kuvaa pystytään muokkaamaan css:ssä
+    
+        document.getElementById("pokemon-container").appendChild(kuvaElementti);
+    }
 
 
 function haeLisatiedot(pokemonData) {
@@ -75,7 +76,7 @@ function haeLisatiedot(pokemonData) {
             AddFlavourText(pokemonContainer, flavorText);
 
             // Hae ja näytä Pokemonin kuva
-            haeJaNaytaKuva(pokemonData.id);
+            haeJaNaytaKuva(pokemonData.name);
         })
         .catch(error => {
             console.error('Virhe haettaessa Pokemonin tietoja:', error);
