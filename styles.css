@@ -43,6 +43,16 @@ padding: 20px;
     }
 }
 
+
+footer {
+    background-color: #333; /* Footerin taustaväri */
+    color: #fff; /* Tekstin väri */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
 /*Määritellään fontti erilliseen fontface-osioon*/
 @font-face {
     font-family: 'GBA';
