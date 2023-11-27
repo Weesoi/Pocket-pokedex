@@ -24,6 +24,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
 
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/display
+
+
 Media:
 
 Pokemon-spritet:

@@ -10,7 +10,7 @@ h1 {
 padding: 20px;
 
 }
-
+/*lappuun liittyviä css-tiedoja*/
 .lappu {
     position: fixed;
     width: 200px;
@@ -32,7 +32,7 @@ padding: 20px;
     .lappu {
         /* Lisää tyylejä pienemmille näytöille */
         position: relative;
-        top: 30px; /* Voit säätää tätä arvoa sen mukaan, kuinka paljon haluat siirtää lappua ylöspäin */
+        top: 30px;
     }
     .nappi {
         margin-top: 25px;
@@ -42,23 +42,22 @@ padding: 20px;
 }
 
 footer {
-    background-color: #333; /* Footerin taustaväri */
-    color: #fff; /* Tekstin väri */
+    background-color: #333;
+    color: #fff;
     padding: 10px;
     text-align: center;
-    position: fixed;
+    position: fixed; /*jotta footer pysyy alhaalla*/
     width: 100%;
     bottom: 0;
     opacity: 0.7;
   }
 
-  .credits {
+  .credits { /*footerin tekstit*/
 
     font-size: x-small;
   }
 
-  #pokemon-container {
-
+  #pokemon-container { /*eli se mihin pokemonin tiedot tulee*/
 
     background-color:#fafaef;
     width: 50%;
@@ -78,21 +77,15 @@ footer {
     font-style: normal; 
   }
 
-
   img.pokemon-image {
     width: 10%;
     height: auto; 
     
 }
 
-.flavour-div {
+.flavour-div { /*keskellä oleva viiva pokemon-containerissa */
     border-bottom: 3px solid black;
 
-}
-
-img.pokemon-image {
-    width: 100%; /* Koko näyttöleveydestä */
-    height: auto; /* Säilytä kuvasuhteet */
 }
 
 @media (min-width: 768px) {

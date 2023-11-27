@@ -1,8 +1,12 @@
+
+
+
+//lappuun liittyvät funktiot 
 function avaaLappu() {
-    var lappu = document.getElementById("avattavaLappu");
+    var lappu = document.getElementById("avattavaLappu"); //etsitään lappu ja sen sisältö
     var sisalto = lappu.querySelector(".sisalto");
 
-    lappu.classList.add("avattu");
+    lappu.classList.add("avattu"); //lapun sisältö on esitetty blockkina
     sisalto.style.display = "block";
 }
 
@@ -124,7 +128,7 @@ function getFlavour(flavorTextEntries) {
 }
 
 function AddFlavourText(container, flavorText) {
-    
+
     var FlavourDiv = document.createElement("div");
     FlavourDiv.innerHTML = "<p>" + flavorText + "</p>";
     FlavourDiv.classList.add("flavour-div");
