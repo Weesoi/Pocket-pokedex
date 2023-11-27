@@ -67,8 +67,10 @@ footer {
 
 
   #pokemon-container {
+
+
     background-color:#fafaef;
-    width: 60%;
+    width: 50%;
     opacity: 0.9;
     text-align: center;
     margin: 0 auto;
@@ -95,9 +97,13 @@ footer {
   img.pokemon-image {
     width: 10%;
     height: auto; 
+    
 }
 
+.flavour-div {
+    border-bottom: 3px solid black;
 
+}
 
 img.pokemon-image {
     width: 100%; /* Koko näyttöleveydestä */

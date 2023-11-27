@@ -15,17 +15,6 @@ function suljeLappu() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 //submit-napin painaminen tuo meidät tänne
 function haePokemon() {
     // Tyhjennä aiemmat haut 
@@ -131,12 +120,14 @@ function getFlavour(flavorTextEntries) {
             return flavorTextEntries[i].flavor_text;
         }
     }
-    return "Ei saatavilla";
+    return "Ei saatavilla :( ";
 }
 
 function AddFlavourText(container, flavorText) {
+    
     var FlavourDiv = document.createElement("div");
     FlavourDiv.innerHTML = "<p>" + flavorText + "</p>";
+    FlavourDiv.classList.add("flavour-div");
     container.appendChild(FlavourDiv);
 }
 
