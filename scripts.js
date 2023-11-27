@@ -21,7 +21,7 @@ function haePokemon() {
     // Tyhjennä aiemmat haut 
     document.getElementById("pokemon-container").innerHTML = "";
     //haetaan 
-    var pokemonNimi = document.getElementById("pokemon-input").value;
+    const pokemonNimi = document.getElementById("pokemon-input").value;
 
     if (pokemonNimi) {
         var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
