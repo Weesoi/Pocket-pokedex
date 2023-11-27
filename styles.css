@@ -95,6 +95,7 @@ footer {
   img.pokemon-image {
     width: 10%;
     height: auto; 
+    border: dotted;
 }
 
 
