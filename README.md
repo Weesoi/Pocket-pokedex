@@ -26,3 +26,4 @@ https://pocket-pokedex.netlify.app/
 TODO:
 
 - lisää ettei nappi makaa kiinni tekstikentässä
+- tee enter-mahdollisuus
