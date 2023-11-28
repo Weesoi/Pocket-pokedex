@@ -11,10 +11,12 @@ Muutamien pokemonien kanssa on vielä ongelmia josta löytyy lisätietoja alhaal
 
 Muutamia ongelmia:
 
-- pokemonien jolla on useampi form esim. deoxys ja enamorus koska tietokannasta ja kuvalähteestä löytyy useampi entry saman-nimiselle pokemonille. Formit pitää spesifoida esimerkiksi: "deoxys-defence" tai "raitchu-alola"
+- pokemonien jolla on useampi form esim. deoxys ja enamorus koska tietokannasta ja kuvalähteestä löytyy useampi entry saman-nimiselle pokemonille. Formit pitää spesifoida esimerkiksi: "deoxys-defence" tai "raitchu-alola". Näillä pokemoneille dex-numerot eivät myöskään 
+käyttäydy normaalisti.
 - pokemonin jolla on nimessä väliviiva tai välilyönti ei pysty hakemaan kannasta. Tämän voisi vielä kehittää myöhemmin.
 - joillakin gen 9 pokemoneilla joilla on vain yksi ability, näkyy sama ability kahteen kertaan
 - teksteissä näkyy chromella ihmeellisiä nuolia, en tiedä mistä tämä johtuu
+
 
 Linkki netify-sivuun:
 https://pocket-pokedex.netlify.app/
