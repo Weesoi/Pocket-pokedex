@@ -21,11 +21,15 @@ https://sentry.io/answers/how-do-i-make-the-first-letter-of-a-string-uppercase-i
 Node: appendChild() method. Mdn web docs.  Käytetty 
 https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
-
+Mdn web docs.
 https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
 
-
+Mdn web docs.
 https://developer.mozilla.org/en-US/docs/Web/CSS/display
+
+JavaScript Dollar Sign $. W3schools.
+https://www.w3schools.com/js/js_variables.asp
+
 
 
 Media:

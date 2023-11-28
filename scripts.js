@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { //tarkistaa onko DOM-ladattu ennen kuin muut osiot suoritetaan. 
+    //tämä ratkaisi aikasemman ongelman jonka takia enter-toiminto ei toiminut. 
     var input = document.getElementById("pokemon-input");
 
     input.addEventListener("keypress", function(event) {
@@ -22,7 +23,7 @@ function suljeLappu() {
     var sisalto = lappu.querySelector(".sisalto");
 
     lappu.classList.remove("avattu");
-    sisalto.style.display = "none";
+    sisalto.style.display = "none"; //poistaa lapun näkyvistä
 }
 
 
@@ -30,11 +31,11 @@ function suljeLappu() {
 function haePokemon() {
     // Tyhjennä aiemmat haut 
     document.getElementById("pokemon-container").innerHTML = "";
-    //haetaan 
+    //haetaan käyttäjän syöttämä pokemon
     var pokemonNimi = document.getElementById("pokemon-input").value;
 
     if (pokemonNimi) {
-        var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
+        var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase(); //muuttaa pokemoni nimen pieniksi kirjaimiksi
 
         // Luodaan uusi objekti
         var kutsu = new XMLHttpRequest();
@@ -48,7 +49,7 @@ function haePokemon() {
                 // Muunna JSON:ksi
                 var data = JSON.parse(kutsu.responseText);
                 haeLisatiedot(data);
-            } else {
+            } else { //jos ongelmia kutsun/syötteen kanssa
                 console.error('Virhe haettaessa Pokemonin tietoja:', kutsu.statusText);
                 alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
             }
@@ -60,13 +61,13 @@ function haePokemon() {
         };
 
         // Lähetä pyyntö
-        kutsu.send();
+        kutsu.send(); 
     }
 }
 
 function haeJaNaytaKuva(pokemonNimi) {
     var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
-    
+    //haetaan kuvat kuvapankista
 
     //vaihtoehtoinen kuvapankki --> mietin vielä kumpaa käytän
     //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
