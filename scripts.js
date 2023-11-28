@@ -1,12 +1,12 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var input = document.getElementById("pokemon-input");
 
-var input = document.getElementById("pokemon-input");
-
-input.addEventListener("keypress", function(event) {
-    if (event.key === "enter") {
-console.log("hello kaka :3")
-        event.preventDefault();
-        document.getElementById("nappi").click();       
-}});
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("nappi").click();
+        }
+    })});
 
 //lappuun liittyvät funktiot 
 function avaaLappu() {
