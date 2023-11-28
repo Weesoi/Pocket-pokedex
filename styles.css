@@ -11,6 +11,13 @@ padding: 10px;
 
 }
 
+
+.nappi {
+margin-top: 10px;
+margin-bottom: 10px;
+
+}
+
 #siteheader {
     margin-bottom: 20px; /* Add margin to h1 element */
 }
@@ -47,8 +54,12 @@ padding: 10px;
     }
 
     .nappi {
-        margin-top: 25px;
+        margin: 10px;
 
+    }
+    .pokemon.input{
+
+    margin-bottom: 10px;
 
     }
 }
@@ -131,7 +142,7 @@ footer {
 
 @media (max-width: 767px) {
     #pokemon-container {
-        width: 80%;
+        width: 90%;
     }
 }
 
