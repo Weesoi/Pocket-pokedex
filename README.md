@@ -1,4 +1,4 @@
-# JavaScriptTO00BL10
+# PocketPokedex
 
 Tervetuloa pokemonien ihmeellisen maailmaan!
 Tällä pienellä ohjelmalla pystyy hakemaan pokemoneja numerojen 001-1021 väliltä (gen 1-9). Kanta jota ohjelmassa käytetään on siis päivitetty uusimpaan peliin 
