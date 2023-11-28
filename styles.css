@@ -7,15 +7,23 @@ body {
 }
 
 h1 {
-padding: 20px;
+padding: 10px;
 
 }
-/*lappuun liittyviä css-tiedoja*/
+
+#siteheader {
+    margin-bottom: 20px; /* Add margin to h1 element */
+}
+
+
+
 .lappu {
-    position: fixed;
+    position: relative; /* Use relative positioning */
     width: 200px;
     padding: 10px;
+    margin-top: 20px; /* Add margin to create space */
 }
+
 
 .sisalto {
     display: none;
@@ -30,10 +38,14 @@ padding: 20px;
 
 @media screen and (max-width: 600px) {
     .lappu {
-        /* Lisää tyylejä pienemmille näytöille */
-        position: relative;
-        top: 30px;
+        top: 0; /* Adjust the top positioning */
+        margin-top: 10px; /* Adjust margin for smaller screens */
     }
+
+    #siteheader {
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+
     .nappi {
         margin-top: 25px;
 
@@ -66,6 +78,7 @@ footer {
     margin: 0 auto;
     border-radius: 25px;
     box-shadow: 0 0 10px black ;
+    
 
   }
 
@@ -78,7 +91,7 @@ footer {
   }
 
   img.pokemon-image {
-    width: 10%;
+    width: 5%;
     height: auto; 
     
 }
@@ -90,12 +103,28 @@ footer {
 
 @media (min-width: 768px) {
     img.pokemon-image {
-        width: 50%; /* Kun näyttö on vähintään 768 pikseliä leveä */
+        width: 40%; 
+        height: auto;/* Kun näyttö on vähintään 768 pikseliä leveä */
     }
 }
 
 @media (min-width: 1024px) {
     img.pokemon-image {
-        width: 30%; /* Kun näyttö on vähintään 1024 pikseliä leveä */
+        width: 50%; /* Kun näyttö on vähintään 1024 pikseliä leveä */
+        height: auto;
+    }
+}
+
+
+@media (max-width: 770px) {
+    img.pokemon-image {
+        min-width: 100%; /* or set a specific pixel value or percentage */
+    }
+}
+
+@media (min-width: 1200px) {
+    img.pokemon-image {
+        width: 30%; /* Kun näyttö on vähintään 1200 pikseliä leveä */
+        height: auto;
     }
 }
