@@ -66,8 +66,9 @@ function haePokemon() {
 }
 
 function haeJaNaytaKuva(pokemonNimi) {
-    var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
-    //haetaan kuvat kuvapankista
+    var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`; 
+    //lisätään käyttäjän syöttämä pokemonin nimi ja muutetaan se pieniksi kirjaimiksi ja haetaan kuvat kuvapankista
+    //Koin tämän helpommaksi tavaksi käyttää sen tyyppisiä kuvia kun halusin ja helposti. 
 
     //vaihtoehtoinen kuvapankki --> mietin vielä kumpaa käytän
     //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
@@ -85,7 +86,8 @@ function haeJaNaytaKuva(pokemonNimi) {
 
 function haeLisatiedot(pokemonData) {
     var pokemonContainer = document.getElementById("pokemon-container");
-
+    //määritellään paikka mihin tiedot kerätään sivulla
+    
     // Luo uusi div-elementti näyttämään Pokemonin tiedot
     var pokemonDiv = document.createElement("div");
     var capitalizedPokemonName = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);

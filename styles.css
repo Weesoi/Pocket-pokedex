@@ -8,10 +8,8 @@ body {
 
 h1 {
     
-    padding: 20px;
-
+    padding: 15px;
 }
-
 
 .nappi {
     margin-top: 10px;
@@ -28,7 +26,6 @@ h1 {
     width: 200px;
     padding: 10px
 }
-
 
 .sisalto {
     display: none;
