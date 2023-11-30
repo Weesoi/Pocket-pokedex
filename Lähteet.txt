@@ -14,7 +14,6 @@ https://chat.openai.com/
 Using the Fetch API. Mdn web docs. 
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
-
 How do I Make the First Letter of a String Uppercase in JavaScript? Sentry.
 https://sentry.io/answers/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript/
 
