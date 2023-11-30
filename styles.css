@@ -4,12 +4,9 @@ body {
     font-family: 'GBA', sans-serif; /* Käytetään ladattua fonttia */
     text-size-adjust: 10%;
     margin-bottom: 100px;
-    background-size: cover; /*pitää taustan paikallaan ja ei toista sitä kun selataan alaspäin*/
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 
 /*asetetaan eri tauskuva mobiilille*/
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 700px) {
     background-image: url('Images/mobile-background.jpg');
     background-size: cover; /*pitää taustan paikallaan ja ei toista sitä kun selataan alaspäin*/
     background-repeat: no-repeat;
@@ -24,6 +21,8 @@ h1 {
 .nappi {
     margin-top: 10px;
     margin-bottom: 10px;
+    
+    
 
 }
 #siteheader {
