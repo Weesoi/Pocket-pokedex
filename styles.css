@@ -4,24 +4,31 @@ body {
     font-family: 'GBA', sans-serif; /* Käytetään ladattua fonttia */
     text-size-adjust: 10%;
     margin-bottom: 100px;
-}
+    background-size: cover; /*pitää taustan paikallaan ja ei toista sitä kun selataan alaspäin*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+/*asetetaan eri tauskuva mobiilille*/
+@media screen and (max-width: 770px) {
+    background-image: url('Images/mobile-background.jpg');
+    background-size: cover; /*pitää taustan paikallaan ja ei toista sitä kun selataan alaspäin*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} }
 
 h1 {
     padding: 20px;
 
 }
 
-
 .nappi {
     margin-top: 10px;
     margin-bottom: 10px;
 
 }
-
 #siteheader {
     margin-bottom: 20px; 
 }
-
 .lappu {
     position: relative; 
     width: 200px;

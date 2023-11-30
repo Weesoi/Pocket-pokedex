@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() { //tarkistaa onko DOM-ladattu ennen kuin muut osiot suoritetaan. 
-    //tämä ratkaisi aikasemman ongelman jonka takia enter-toiminto ei toiminut. 
+    //tämä ratkaisi aikaisemman ongelman jonka takia enter-toiminto ei toiminut. 
     var input = document.getElementById("pokemon-input");
 
     input.addEventListener("keypress", function(event) {
@@ -133,10 +133,10 @@ function getFlavour(flavorTextEntries) {
             return flavorTextEntries[i].flavor_text;
         }
     }
-    return "Ei saatavilla :( ";
+    return "Ei saatavilla :( "; 
 }
 
-function AddFlavourText(container, flavorText) {
+function AddFlavourText(container, flavorText) { //haetaan ja lisätään flavourteksti
 
     var FlavourDiv = document.createElement("div");
     FlavourDiv.innerHTML = "<p>" + flavorText + "</p>";

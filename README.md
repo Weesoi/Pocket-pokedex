@@ -7,15 +7,14 @@ Pokemonin nimen input-kenttään syötettäessä, hakee ohjelma pokemonin nimen,
 pokedex kuvaus-tekstin joka kertoo pokemonista jotakin tyypillisiä lajitietoja.
 Muutamien pokemonien kanssa on vielä ongelmia josta löytyy lisätietoja alhaalta.
 
-"Vinkkejä"-painikkeesta saa vihjeitä minkä nimisiä pokemoneja on olemassa, jos pokemonien maailma ei ole itselle tuttu.
+"Tips"-painikkeesta saa vihjeitä minkä nimisiä pokemoneja on olemassa, jos pokemonien maailma ei ole itselle tuttu.
 
-Muutamia ongelmia:
+Muutamia ongelmia joita korjata myöhemmin:
 
 - pokemonien jolla on useampi form esim. deoxys ja enamorus koska tietokannasta ja kuvalähteestä löytyy useampi entry saman-nimiselle pokemonille. Formit pitää spesifoida esimerkiksi: "deoxys-defence" tai "raitchu-alola". Näillä pokemoneille dex-numerot eivät myöskään 
 käyttäydy normaalisti.
-- pokemonin jolla on nimessä väliviiva tai välilyönti ei pysty hakemaan kannasta. Tämän voisi vielä kehittää myöhemmin.
+- pokemonin jolla on nimessä väliviiva tai välilyönti ei pysty hakemaan kannasta.
 - joillakin gen 9 pokemoneilla joilla on vain yksi ability, näkyy sama ability kahteen kertaan
-- teksteissä näkyy chromella ihmeellisiä nuolia, en tiedä mistä tämä johtuu
 
 
 Linkki netify-sivuun:
