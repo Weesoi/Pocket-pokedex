@@ -15,7 +15,5 @@ Muutamia ongelmia joita korjata myöhemmin:
 käyttäydy normaalisti.
 - pokemonin jolla on nimessä väliviiva tai välilyönti ei pysty hakemaan kannasta.
 - joillakin gen 9 pokemoneilla joilla on vain yksi ability, näkyy sama ability kahteen kertaan
-
-
-Linkki netify-sivuun:
-https://pocket-pokedex.netlify.app/
+- teksteissä näkyy chromella ihmeellisiä nuolia, en tiedä mistä tämä johtuu. Tuntuu johtuvan Apista itsessään mutta aika ei riittänyt tämän tutkimiseen.
+Firefoxilla tätä ongelmaa ei ole.
