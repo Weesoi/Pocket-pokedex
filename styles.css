@@ -7,14 +7,24 @@ body {
 }
 
 h1 {
-padding: 20px;
+    
+    padding: 15px;
+}
+
+.nappi {
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
-/*lappuun liittyviä css-tiedoja*/
+
+#siteheader {
+    margin-bottom: 20px; 
+}
+
 .lappu {
-    position: fixed;
+    position: fixed; 
     width: 200px;
-    padding: 10px;
+    padding: 10px
 }
 
 .sisalto {
@@ -49,12 +59,11 @@ footer {
     opacity: 0.7;
   }
 
-  .credits { /*footerin tekstit*/
-
+.credits { /*footerin tekstit*/
     font-size: x-small;
   }
 
-  #pokemon-container { /*eli se mihin pokemonin tiedot tulee*/
+#pokemon-container { /*eli se mihin pokemonin tiedot tulee*/
 
     background-color:#fafaef;
     width: 50%;
@@ -63,7 +72,6 @@ footer {
     margin: 0 auto;
     border-radius: 25px;
     box-shadow: 0 0 10px black ;
-
   }
 
 /*Määritellään fontti erilliseen fontface-osioon*/
@@ -74,10 +82,9 @@ footer {
     font-style: normal; 
   }
 
-  img.pokemon-image {
-    width: 10%;
+img.pokemon-image {
+    width: 5%;
     height: auto; 
-    
 }
 
 .flavour-div { /*keskellä oleva viiva pokemon-containerissa */
@@ -87,12 +94,24 @@ footer {
 /*pienemmille näytöille tarkoitettuja asetuksia*/
 @media (min-width: 768px) {
     img.pokemon-image {
-        width: 50%; /* Kun näyttö on vähintään 768 pikseliä leveä */
+        width: 40%; 
+        height: auto;/* Kun näyttö on vähintään 768 pikseliä leveä */
+    }
+    #pokemon-container {
+        width: 50%; /* tai muu sopiva arvo */
     }
 }
 
 @media (min-width: 1024px) {
     img.pokemon-image {
-        width: 30%; /* Kun näyttö on vähintään 1024 pikseliä leveä */
+        width: 50%; /* Kun näyttö on vähintään 1024 pikseliä leveä */
+        height: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    img.pokemon-image {
+        width: 30%; /* Kun näyttö on vähintään 1200 pikseliä leveä */
+        height: auto;
     }
 }

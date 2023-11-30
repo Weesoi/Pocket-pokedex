@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() { //tarkistaa onko DOM-ladattu ennen kuin muut osiot suoritetaan. 
+    //tämä ratkaisi aikasemman ongelman jonka takia enter-toiminto ei toiminut. 
+    var input = document.getElementById("pokemon-input");
+
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("nappi").click();
+        }
+    })});
+
 //lappuun liittyvät funktiot 
 function avaaLappu() {
     var lappu = document.getElementById("avattavaLappu"); //etsitään lappu ja sen sisältö
@@ -12,14 +23,14 @@ function suljeLappu() { //määritellään lappu ja sen sisältö
     var sisalto = lappu.querySelector(".sisalto");
 // piilotetaan sisältö
     lappu.classList.remove("avattu");
-    sisalto.style.display = "none";
+    sisalto.style.display = "none"; //poistaa lapun näkyvistä
 }
 
 //submit-napin painaminen tuo meidät tänne
 function haePokemon() {
     // Tyhjennä aiemmat haut 
     document.getElementById("pokemon-container").innerHTML = "";
-    //haetaan käyttäjän syöttämä nimi
+    //haetaan käyttäjän syöttämä pokemon
     var pokemonNimi = document.getElementById("pokemon-input").value;
 
     if (pokemonNimi) { //jos pokemonin nimi on asia laitetaan pyyntö menemään
@@ -49,13 +60,14 @@ function haePokemon() {
         };
 
         // Lähetä pyyntö
-        kutsu.send();
+        kutsu.send(); 
     }
 }
 
-function haeJaNaytaKuva(pokemonNimi) { //otetaan käyttäjän kirjoittama nimi ja muutetaan se pieniksi kirjaimiksi
-    var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
-    
+function haeJaNaytaKuva(pokemonNimi) {
+    var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`; 
+    //lisätään käyttäjän syöttämä pokemonin nimi ja muutetaan se pieniksi kirjaimiksi ja haetaan kuvat kuvapankista
+    //Koin tämän helpommaksi tavaksi käyttää sen tyyppisiä kuvia kun halusin ja helposti. 
 
     //vaihtoehtoinen kuvapankki --> mietin vielä kumpaa käytän
     //var imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonDexNumero}.gif`;
@@ -73,7 +85,8 @@ function haeJaNaytaKuva(pokemonNimi) { //otetaan käyttäjän kirjoittama nimi j
 
 function haeLisatiedot(pokemonData) {
     var pokemonContainer = document.getElementById("pokemon-container");
-
+    //määritellään paikka mihin tiedot kerätään sivulla
+    
     // Luo uusi div-elementti näyttämään Pokemonin tiedot
     var pokemonDiv = document.createElement("div");
     var capitalizedPokemonName = pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1);
