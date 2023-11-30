@@ -1,6 +1,3 @@
-
-
-
 //lappuun liittyvät funktiot 
 function avaaLappu() {
     var lappu = document.getElementById("avattavaLappu"); //etsitään lappu ja sen sisältö
@@ -10,23 +7,22 @@ function avaaLappu() {
     sisalto.style.display = "block";
 }
 
-function suljeLappu() {
+function suljeLappu() { //määritellään lappu ja sen sisältö
     var lappu = document.getElementById("avattavaLappu");
     var sisalto = lappu.querySelector(".sisalto");
-
+// piilotetaan sisältö
     lappu.classList.remove("avattu");
     sisalto.style.display = "none";
 }
-
 
 //submit-napin painaminen tuo meidät tänne
 function haePokemon() {
     // Tyhjennä aiemmat haut 
     document.getElementById("pokemon-container").innerHTML = "";
-    //haetaan 
+    //haetaan käyttäjän syöttämä nimi
     var pokemonNimi = document.getElementById("pokemon-input").value;
 
-    if (pokemonNimi) {
+    if (pokemonNimi) { //jos pokemonin nimi on asia laitetaan pyyntö menemään
         var apiUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonNimi.toLowerCase();
 
         // Luodaan uusi objekti
@@ -41,7 +37,7 @@ function haePokemon() {
                 // Muunna JSON:ksi
                 var data = JSON.parse(kutsu.responseText);
                 haeLisatiedot(data);
-            } else {
+            } else { //virhetekstit jos tietoa ei saada
                 console.error('Virhe haettaessa Pokemonin tietoja:', kutsu.statusText);
                 alert('Virhe haettaessa Pokemonin tietoja. Tarkista nimi ja yritä uudelleen.');
             }
@@ -57,7 +53,7 @@ function haePokemon() {
     }
 }
 
-function haeJaNaytaKuva(pokemonNimi) {
+function haeJaNaytaKuva(pokemonNimi) { //otetaan käyttäjän kirjoittama nimi ja muutetaan se pieniksi kirjaimiksi
     var imageUrl = `https://play.pokemonshowdown.com/sprites/gen5/${pokemonNimi.toLowerCase()}.png`;
     
 
@@ -90,7 +86,7 @@ function haeLisatiedot(pokemonData) {
     // Lisää div-elementti sivulle
     pokemonContainer.appendChild(pokemonDiv);
 
-    // Hae flavor-teksti samasta APista kuin aikasemmin mutta käyttäen hieman eri osoitetta
+    // Hae flavor-teksti samasta APista kuin aikasemmin mutta käyttäen hieman eri osoitetta ja fetch-komentoa
     var speciesUrl = pokemonData.species.url;
     fetch(speciesUrl)
         .then(response => response.json())
@@ -113,7 +109,7 @@ function muunnaKilogrammoiksi(grammat) {
 }
 
 function haeKyvyt(abilities) {
-    // Yhdistä Pokemonin kyvyt
+    // Yhdistä Pokemonin kyvyt peräkkäin pilkun kanssa ja palauta ne
     return abilities.map(ability => ability.ability.name).join(", ");
 }
 

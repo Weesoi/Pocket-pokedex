@@ -28,6 +28,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
 https://developer.mozilla.org/en-US/docs/Web/CSS/display
 
 
+https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+
 Media:
 
 Pokemon-spritet:

@@ -20,9 +20,3 @@ Formit pitää spesifoida esimerkiksi: "deoxys-defence" tai "raitchu-alola"
 
 Linkki netify-sivuun:
 https://pocket-pokedex.netlify.app/
-
-
-
-TODO:
-
-- lisää ettei nappi makaa kiinni tekstikentässä

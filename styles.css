@@ -20,12 +20,11 @@ padding: 20px;
 .sisalto {
     display: none;
 }
-
 .avaa-nappi,
 .sulje-nappi {
     padding: 5px 10px;
     margin-top: 10px;
-    cursor: pointer;
+    cursor: pointer; /*Muuttuu sormeksi kun ollaan lapun napeilla. Samalla tavalla kuin oltaisiin "linkkejen" päällä.*/
 }
 
 @media screen and (max-width: 600px) {
@@ -36,8 +35,6 @@ padding: 20px;
     }
     .nappi {
         margin-top: 25px;
-
-
     }
 }
 
@@ -87,7 +84,7 @@ footer {
     border-bottom: 3px solid black;
 
 }
-
+/*pienemmille näytöille tarkoitettuja asetuksia*/
 @media (min-width: 768px) {
     img.pokemon-image {
         width: 50%; /* Kun näyttö on vähintään 768 pikseliä leveä */
