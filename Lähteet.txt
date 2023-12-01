@@ -1,37 +1,35 @@
 Lähteet:
 
-PokeAPI, The RESTful Pokémon API. 
-https://pokeapi.co/
-
-Bootstrap 5.
+Buttons. Bootstrap 5. Käytetty 1.12.2023 
 https://getbootstrap.com/docs/4.0/components/buttons/
 
 ChatGPT:tä on käytetty koodin siistimiseen ja ongelmien etsimiseen koodista. 
-OpenAI 2023. ChatGPT versio GPT-3.5. Käytetty 26.11.2023 
+OpenAI 2023. ChatGPT versio GPT-3.5. Käytetty 1.12.2023 
 https://chat.openai.com/
 
+PokeAPI, The RESTful Pokémon API. Käytetty 1.12.2023 
+https://pokeapi.co/
 
-Using the Fetch API. Mdn web docs. 
-https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-
-How do I Make the First Letter of a String Uppercase in JavaScript? Sentry.
-https://sentry.io/answers/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript/
-
-Node: appendChild() method. Mdn web docs.  Käytetty 
+Node: appendChild() method. Mdn web docs.  Käytetty 1.12.2023 
 https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
 
-Mdn web docs.
+CSS text size adjust. Mdn web docs. Käytetty 1.12.2023 
 https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
 
-Mdn web docs.
+CSS-display. Mdn web docs. Käytetty 1.12.2023 
 https://developer.mozilla.org/en-US/docs/Web/CSS/display
 
-JavaScript Dollar Sign $. W3schools.
-https://www.w3schools.com/js/js_variables.asp
-
-
-
+CSS-cursors. Mdn web docs. Käytetty 1.12.2023 
 https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+
+Using the Fetch API. Mdn web docs. Käytetty 1.12.2023 
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+How do I Make the First Letter of a String Uppercase in JavaScript? Sentry. Käytetty 1.12.2023 
+https://sentry.io/answers/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript/
+
+JavaScript Dollar Sign $. W3schools. Käytetty 1.12.2023 
+https://www.w3schools.com/js/js_variables.asp
 
 Media:
 
